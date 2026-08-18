@@ -150,4 +150,5 @@ def handleStubPeriod(confStart: LocalDate, confEnd: LocalDate, stubType: StubTyp
   }
 }
 
-class PeriodicSchedule(val periods: List[SchedulePeriod]) {}
+
+class PeriodicSchedule(val periods: List[SchedulePeriod])
