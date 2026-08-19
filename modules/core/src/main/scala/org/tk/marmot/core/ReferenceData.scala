@@ -49,6 +49,22 @@ trait ReferenceDataProvider {
    * @return the reference data item associated with the given identifier
    */
   def get[T](id: RefDataId[T]): T
+
+  /**
+   * Retrieves the reference data item associated with the given identifier, or returns a default value if the item is not found.
+   *
+   * @param id the identifier of the reference data item
+   * @param default a by-name parameter that provides a default value if the item is not found
+   * @tparam T the type of the reference data item
+   * @return the reference data item associated with the given identifier, or the default value if not found
+   */
+  def getOrElse[T](id: RefDataId[T], default: => T): T = {
+    try {
+      get(id)
+    } catch {
+      case _: NoSuchElementException => default
+    }
+  }
 }
 
 

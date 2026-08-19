@@ -44,6 +44,13 @@ case class Tenor(value: Int, unit: TenorUnit) {
 }
 
 object Tenor {
+  final val ONE_DAY = Tenor(1, TenorUnit.Days)
+  final val ONE_WEEK = Tenor(1, TenorUnit.Weeks)
+  final val ONE_MONTH = Tenor(1, TenorUnit.Months)
+  final val ONE_YEAR = Tenor(1, TenorUnit.Years)
+  final val THREE_MONTHS = Tenor(3, TenorUnit.Months)
+  final val SIX_MONTHS = Tenor(6, TenorUnit.Months)
+
   def apply(value: Int, unit: TenorUnit): Tenor = new Tenor(value, unit)
 
   def fromString(tenorStr: String): Tenor = {

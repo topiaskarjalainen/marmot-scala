@@ -1,5 +1,8 @@
-package org.tk.core
+package org.tk.marmot.core
 
-class Index {
-
+/**
+ * A trait representing some index
+ */
+trait Index {
+  val name: String
 }
