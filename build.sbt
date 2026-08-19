@@ -33,7 +33,7 @@ lazy val coreModule = project
 
 lazy val mathModule = project
   .in(file("modules/math"))
-  .settings(commonSetting
+  .settings(commonSettings)
   .settings(
     name := "marmot-math",
   )
