@@ -9,6 +9,8 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/benchmarks" />
+            <option value="$PROJECT_DIR$/modules/core" />
+            <option value="$PROJECT_DIR$/modules/math" />
             <option value="$PROJECT_DIR$/project" />
           </set>
         </option>

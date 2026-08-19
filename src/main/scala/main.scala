@@ -1,9 +1,7 @@
-package org.tk
-
-import org.tk.marmot.core.FileReferenceDataLoader
-import org.tk.marmot.core.time.*
-
 import java.time.LocalDate
+
+import org.tk.marmot.core.*
+import org.tk.marmot.core.time.*
 
 @main
 def main(): Unit = {
@@ -31,7 +29,7 @@ def main(): Unit = {
 
 
   scheduleConfig.resolve(fileRefDataProvider).periods.foreach { period =>
-      println(period)
+    println(period)
   }
   println("----")
   scheduleConfig.copy(stubType = StubType.LONG_END).resolve(fileRefDataProvider).periods.foreach { period =>

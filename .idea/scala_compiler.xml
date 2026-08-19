@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <option name="separateProdTestSources" value="true" />
-    <profile name="sbt 1" modules="marmot,marmot.benchmarks,marmot.benchmarks.main,marmot.benchmarks.test,marmot.main,marmot.test" />
+    <profile name="sbt 1" modules="marmot,marmot.benchmarks,marmot.benchmarks.main,marmot.benchmarks.test,marmot.main,marmot.marmot-core,marmot.marmot-math,marmot.test" />
+    <profile name="sbt 2" modules="marmot.marmot-core.main,marmot.marmot-core.test,marmot.marmot-math.main,marmot.marmot-math.test">
+      <option name="deprecationWarnings" value="true" />
+      <option name="uncheckedWarnings" value="true" />
+      <option name="featureWarnings" value="true" />
+      <parameters>
+        <parameter value="-encoding" />
+        <parameter value="utf8" />
+      </parameters>
+    </profile>
   </component>
 </project>

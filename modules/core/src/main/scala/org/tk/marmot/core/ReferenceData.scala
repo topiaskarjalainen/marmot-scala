@@ -1,5 +1,4 @@
-package org.tk.marmot
-package core
+package org.tk.marmot.core
 
 import org.tk.marmot.core.time.{Calendar, CalendarId}
 
