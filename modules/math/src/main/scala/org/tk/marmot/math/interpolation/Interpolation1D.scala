@@ -3,9 +3,8 @@ package math.interpolation
 
 
 trait Interpolation1D[@specialized(Double, Float) T] {
-  val slopeFn: InterpolationNodeSlopes[T]
-  def interpolate(xq: T, x: Array[T], y: Array[T], slopes: Array[T]): T
-  def firstDerivative(xq: T, x: Array[T], y: Array[T], slopes: Array[T]): T
+  def interpolate(xq: T, x: Array[T], y: Array[T], slopes: InterpolationNodeSlopes[T]): T
+  def firstDerivative(xq: T, x: Array[T], y: Array[T], slopes: InterpolationNodeSlopes[T]): T
 }
 
 object Interpolation1D {

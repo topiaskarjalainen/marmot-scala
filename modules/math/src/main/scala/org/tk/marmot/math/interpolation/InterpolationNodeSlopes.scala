@@ -6,10 +6,9 @@ package math.interpolation
  * Node slopes for interpolation.
  * @tparam T Type of the interpolation nodes (e.g., Double, Float).
  */
-trait InterpolationNodeSlopes[T] {
-  def slopes(x: Array[T], y: Array[T]): Array[T]
+trait InterpolationNodeSlopes[T] extends Function2[Array[T], Array[T], Array[T]] {
   def cacheSlopes(x: Array[T], y: Array[T]): CachedSlopes[T] = {
-    val computedSlopes = slopes(x, y)
+    val computedSlopes = apply(x, y)
     CachedSlopes(computedSlopes)
   }
 }
@@ -20,6 +19,6 @@ trait InterpolationNodeSlopes[T] {
  * @tparam T Type of the interpolation nodes (e.g., Double, Float).
  */
 final case class CachedSlopes[T](cached: Array[T]) extends InterpolationNodeSlopes[T] {
-  inline override def slopes(x: Array[T], y: Array[T]): Array[T] = cached
+  inline override def apply(x: Array[T], y: Array[T]): Array[T] = cached
 }
 

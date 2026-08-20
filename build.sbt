@@ -36,6 +36,11 @@ lazy val mathModule = project
   .settings(commonSettings)
   .settings(
     name := "marmot-math",
+    libraryDependencies ++= Seq(
+      "org.typelevel" %% "spire" % "0.18.0",
+      "org.ejml" % "ejml-core" % "0.41",
+      "org.ejml" % "ejml-ddense" % "0.41"
+    )
   )
 
 
@@ -43,6 +48,12 @@ lazy val benchmarks = project
   .in(file("benchmarks"))
   .dependsOn(root)
   .enablePlugins(JmhPlugin)
+  .settings(
+    libraryDependencies ++= Seq(
+      "org.ejml" % "ejml-core" % "0.41",
+      "org.ejml" % "ejml-ddense" % "0.41"
+    ),
+  )
 
 lazy val root = rootProject
   .aggregate(coreModule, mathModule)

@@ -2,12 +2,9 @@ package org.tk.marmot
 package math.interpolation
 
 class LinearInterpolation1D extends Interpolation1D[Double] {
+  override def interpolate(xq: Double, x: Array[Double], y: Array[Double], slopes: InterpolationNodeSlopes[Double]): Double = ???
 
-  override def interpolate(xq: Double, x: Array[Double], y: Array[Double], slopes: Array[Double]): Double = ???
-
-  override def firstDerivative(xq: Double, x: Array[Double], y: Array[Double], slopes: Array[Double]): Double = ???
-
-  override val slopeFn: InterpolationNodeSlopes[Double] = ???
+  override def firstDerivative(xq: Double, x: Array[Double], y: Array[Double], slopes: InterpolationNodeSlopes[Double]): Double = ???
 }
 
 object LinearInterpolation1D {
